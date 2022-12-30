@@ -68,7 +68,10 @@ const openModal=(id)=>{
     modal.classList.add('show-modal')
     document.querySelector('#editTaskForm').setAttribute('onsubmit',`editTask(event,${id})`)
 }
-const closeModal=()=>modal.classList.remove('show-modal')
+const closeModal=()=>{
+    document.querySelector('#editTaskInput').value=''
+    modal.classList.remove('show-modal')
+}
 
 const editTask=(event,id)=>{
     event.preventDefault()
