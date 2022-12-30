@@ -40,11 +40,17 @@ const ListTasks=()=>{
 const addTask=(event)=>{
     event.preventDefault()
     let taskToAdd=document.querySelector('#taskInput').value
-    let newTask=new Task(new Date().getTime(),taskToAdd)
-    taskList.push(newTask)
-    localStorage.setItem('tasks',JSON.stringify(taskList))
-    document.querySelector('#taskInput').value=''
-    ListTasks()
+    taskToAdd.trim()
+    if(taskToAdd.length>1){
+        let newTask=new Task(new Date().getTime(),taskToAdd)
+        taskList.push(newTask)
+        localStorage.setItem('tasks',JSON.stringify(taskList))
+        document.querySelector('#taskInput').value=''
+        ListTasks()
+    }else{
+        alert("Please don't add empty spaces")
+        document.querySelector('#taskInput').value=''
+    }
 }
 
 const deleteTask=(id)=>{
