@@ -1,0 +1,254 @@
+/* general */
+@font-face {
+    font-family: 'Joystix monospace';
+    src: url(/fonts/joystix\ monospace.ttf);
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;
+    font-family:'Joystix Monospace', monospace;
+}
+
+*::selection{
+    background-color: #FFFFFF80;
+    color: black;
+}
+
+*::-webkit-scrollbar{
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 0.625rem;
+}
+
+*::-webkit-scrollbar-thumb{
+    background-color: rgba(0, 0, 0, 0.2)
+}
+
+body{
+    background-image: url('/assets/Wallpapertest.png');
+    background-position: center center;
+    background-repeat: repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: #fff;
+    color: #fff;
+    border-color: #fff;
+    outline-color: #fff;
+}
+
+.overlay{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    z-index: 0;
+}
+
+main{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+input{
+    font-family: 'Joystix Monospace', monospace;
+    background-color: transparent;
+    color: white;
+    outline: none;
+    border-style: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 100%;
+    font-size: 1.3rem;
+}
+
+/*color menu*/
+.select-color{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 0.1875rem solid;
+    margin-top: 1.5625rem;
+}
+
+.select-color button {
+    cursor: pointer;
+    border: 0.1875rem dashed black;
+    width: 1.5625rem;
+    height: 1.5625rem;
+    margin: 0.3125rem;
+}
+
+.select-color button:hover{
+    padding: 0.125rem;
+}
+
+.background-red{background-color: #F00;}
+.background-blue{background-color: #55F;}
+.background-green{background-color: #0f0;}
+.background-yellow{background-color: #FF0;}
+.background-orange{background-color: #F72;}
+.background-purple{background-color: #90F;}
+.background-magenta{background-color: #F0A;}
+.background-cyan{background-color: #0FF;}
+.background-light{background-color: #EEE;}
+.background-dark{background-color: #555;}
+
+/* task menu */
+.task{
+    max-width: 50rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 0.1875rem solid white;
+    margin: 1.5625rem;
+}
+
+.task h1,h3,form{
+    text-align: center;
+}
+
+.task form{
+    padding: 1.25rem;
+}
+
+.task small{
+    display: inline;
+    font-size:xx-small;
+}
+
+.task ul{
+    list-style: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 22.5rem;
+    padding: 0.3125rem;
+    max-width: 50rem;
+}
+
+.task ul::-webkit-scrollbar{
+    background-color: transparent;
+    width: 0.625rem;
+}
+
+.task ul::-webkit-scrollbar-thumb{
+    background-color: rgba(100, 100, 100, 0.5)
+}
+
+.task ul li{
+    margin: 0.625rem;
+    padding: 0.625rem;
+    display: flex;
+    justify-content: space-between;
+    cursor:pointer;
+}
+
+.task ul li:hover{
+    outline: 0.125rem;
+    outline-style: solid;
+}
+
+.task ul li p::first-letter{
+    text-transform: uppercase;
+}
+
+.task ul li p{
+    display: flex;
+    align-items: center;
+    margin-right: 0.625rem;
+}
+
+.task ul li .buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.task ul li .buttons button{
+    cursor: pointer;
+    background-color: transparent;
+    border: 0.125rem solid;
+    color: white;
+    width: 1.875rem;
+    height: 1.875rem;
+    margin: 0rem 0.3125rem;
+    font-size: 1.3rem;
+}
+
+.done{
+    text-decoration: line-through;
+    text-shadow: #000;
+}
+
+/*MODAL*/
+.modal{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.4);
+    display:none;
+}
+
+.modal-container{
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    border: 0.125rem solid;
+    max-width: 31.25rem;
+    height: 18.75rem;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1.25rem;
+}
+
+.modal-container form{
+    margin: 4.6875rem 0rem;
+}
+
+.close-modal{
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+    margin: 0.625rem;
+    width: 1.875rem;
+    height: 1.875rem;
+    background-color: transparent;
+    border: 0.125rem solid;
+    font-size: 1.3rem;
+}
+
+.cancel-button{
+    position: absolute;
+    bottom: 0rem;
+    right: 0rem;
+    margin: 0.625rem;
+    padding:0.3125rem;
+    background-color: transparent;
+    border: 0.125rem solid;
+    font-size: 1rem;
+}
+
+.show-modal{
+    display: block;
+}
+
+/*footer*/
+footer{
+    width: 100%;
+    text-align: center;
+    font-size: 0.7rem;
+}

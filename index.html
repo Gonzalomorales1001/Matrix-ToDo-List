@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A Matrix style to-do list. You can add new tasks, delete tasks, edit tasks, and mark tasks as done.">
+    <meta name="keywords" content="tasks,matrix,color">
+    <meta name="author" content="Gonzalo Morales">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-png">
+    <title>To-do list</title>
+</head>
+<body class="background-color color">
+    <article class="overlay">
+        <main>
+            <div class="select-color border-color color">
+                <button onclick="changeColor(red)" class="background-red"></button>
+                <button onclick="changeColor(blue)" class="background-blue"></button>
+                <button onclick="changeColor(green)" class="background-green"></button>
+                <button onclick="changeColor(yellow)" class="background-yellow"></button>
+                <button onclick="changeColor(orange)" class="background-orange"></button>
+                <button onclick="changeColor(magenta)" class="background-magenta"></button>
+                <button onclick="changeColor(purple)" class="background-purple"></button>
+                <button onclick="changeColor(cyan)" class="background-cyan"></button>
+                <button onclick="changeColor(light)" class="background-light"></button>
+                <button onclick="changeColor(dark)" class="background-dark"></button>
+            </div>
+            <div class="task border-color">
+                <h1>Task List</h1>
+                <div class="add border-color color">
+                    <h3>Add a new task</h3>
+                    <form onsubmit="addTask(event)">
+                        <input type="text" maxlength="25" required id="taskInput" class="color border-color">
+                        <small>Press 'Enter' to add a new task</small>
+                    </form>
+                </div>
+                <small style="margin-left:20px">Click on the task to mark as done</small>
+                <ul id="list">
+                </ul>
+            </div>
+            <div id="modal" class="modal">
+                <div class="border-color color modal-container">
+                    <h3>Edit Task</h3>
+                        <form id="editTaskForm">
+                            <input type="text" maxlength="25" required id="editTaskInput" class="color border-color">
+                            <small>Press 'Enter' to apply the changes</small>
+                        </form>
+                    <button class="border-color color close-modal" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+                    <button class="border-color color cancel-button" onclick="closeModal()">Cancel</button>
+                </div>
+            </div>
+        </main>
+        <footer class="color">
+            <p>Created by <a class="color" target="_blank" href="https://github.com/Gonzalomorales1001">Gonzalo Morales</p>
+            <p><a class="color" target="_blank" href="https://rollingcodeschool.com/">Rolling Code</a></p>  
+            <small class="color">favicon by <a target="_blank" class="color" href="https://icons8.com">Icons8</a></small>
+        </footer>
+    </article>
+    <script src="/js/colors.js"></script>
+    <script src="app.js"></script>
+    <script src="https://kit.fontawesome.com/8cfaa6df50.js" crossorigin="anonymous"></script>
+</body>
+</html>
